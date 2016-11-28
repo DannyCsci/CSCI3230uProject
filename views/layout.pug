@@ -1,0 +1,42 @@
+doctype
+html
+    head
+        title= title
+        link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+
+        link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css")
+
+        link(rel="stylesheet", href="/styles/main.css")
+    body
+        nav(class="navbar navbar-inverse navbar-fixed-top")
+            div(class="container dropped")
+                div(class="navbar-header")
+                    button(type="button",
+                    class="navbar-toggle collapsed",
+                    data-toggle="collapse",
+                    data-target="#menu",
+                    aria-expanded="false")
+                        span(class="sr-only") Toggle navigation
+                        span(class="icon-bar")
+                    a(class="navbar-brand", href="#")
+                        span(class="logoText")
+                div(class="collapse navbar-collapse", id="menu")
+                    ul(class="nav navbar-nav navbar-fixed-top")
+                        li
+                            a(href="/") Home
+
+                        if (username && (username !== ''))
+                            li
+                                a(href="/profile") Profile
+                            li
+                                a(href="/logout") Logout
+                        else
+                            li
+                                a(href="/login") Login
+                            li
+                                a(href="/register") Register
+                            li
+                                a(href="/about") About
+        div(class="container")
+            block content
+
