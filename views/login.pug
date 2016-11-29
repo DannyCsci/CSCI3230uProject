@@ -1,8 +1,8 @@
 extends layout
 block content
   h1 Login
-  if (errorMessage)
-    div= errorMessage
+  if (error)
+    div= error
   form(action="/processLogin",
        method="post",
        class="form-horizontal")

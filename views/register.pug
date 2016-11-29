@@ -1,7 +1,7 @@
 extends layout
 block content
   h1 Create An Account
-  if (errorMessage)
+  if error
     div= errorMessage
   form(action="/processRegistration",
        method="post",
